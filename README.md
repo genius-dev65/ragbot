@@ -24,14 +24,14 @@ This is a Retrieval-Augmented Generation (RAG) chat application built with Strea
    ```
 
 3. Set up your environment variables:
-   - Create a `.env` file in the project root
-   - Add the following variables:
+   - For local development, create a `.env` file in the project root and add the following variables:
      ```
      OPENAI_API_KEY=your_openai_api_key
      LANGCHAIN_TRACING_V2=your_langchain_tracing_v2
      LANGCHAIN_ENDPOINT=your_langchain_endpoint
      LANGCHAIN_API_KEY=your_langchain_api_key
      ```
+   - For Streamlit Cloud deployment, you'll add these as secrets (see Deployment section).
 
 ## Usage
 
@@ -55,7 +55,14 @@ You can easily deploy this app on Streamlit Cloud:
 1. Fork this repository to your GitHub account
 2. Sign up for a Streamlit Cloud account at https://streamlit.io/cloud
 3. Create a new app in Streamlit Cloud and connect it to your forked repository
-4. Set up the environment variables in the Streamlit Cloud dashboard
+4. Set up the environment variables as secrets in the Streamlit Cloud dashboard:
+   - Go to your app's settings
+   - Navigate to the "Secrets" section
+   - Add each environment variable as a key-value pair
 5. Deploy and access your app through the provided URL
 
-For more information on deploying Streamlit apps, visit: https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app
+Using Streamlit's secrets management ensures that your sensitive information (like API keys) is securely stored and not exposed in your code.
+
+For more information on deploying Streamlit apps and managing secrets, visit:
+- https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app
+- https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app/connect-to-data-sources/secrets-management
